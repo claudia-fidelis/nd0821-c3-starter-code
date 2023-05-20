@@ -29,9 +29,9 @@ def train_model(X_train, y_train):
 
     # Hyperparameter Optimization
     parameters = {
-        "n_estimators":[5, 20, 30, 50],
-        "max_depth":[3, 5],
-        "learning_rate":[0.01, 0.1, 0.2]
+        "n_estimators": [5, 20, 30, 50],
+        "max_depth": [3, 5],
+        "learning_rate": [0.01, 0.1, 0.2]
     }
 
     # Run the grid search
@@ -42,7 +42,7 @@ def train_model(X_train, y_train):
     print(f'The best parameters are: {grid.best_params_}')
     clf = grid.best_estimator_
 
-    # Train the model using the training sets 
+    # Train the model using the training sets
     clf.fit(X_train, y_train)
 
     return clf
@@ -91,18 +91,18 @@ def inference(model, X):
 
 
 def slice(test,
-	  target,
+          target,
           model,
           categ_col,
           encoder,
           lb
-):
+          ):
     """
     Output the performance of the model on slices of the data
 
     args:
         - test (dataframe): dataframe of teste split
-        - target (str): class label 
+        - target (str): class label
         - model (ml.model): trained machine learning model
         - categ_col (list): list of categorical columns
         - encoder (OneHotEncoder): One Hot Encoder
@@ -117,7 +117,7 @@ def slice(test,
     for col in categ_col:
         for category in test[col].unique():
             row = {}
-            tmp_df = test[test[col]==category]
+            tmp_df = test[test[col] == category]
 
             X, y, _, _ = process_data(
                 X=tmp_df,
@@ -139,6 +139,13 @@ def slice(test,
 
             rows_list.append(row)
 
-    metrics = pd.DataFrame(rows_list, columns=["col", "category", "precision", "recall", "f1"])
+    metrics = pd.DataFrame(
+        rows_list,
+        columns=[
+            "col",
+            "category",
+            "precision",
+            "recall",
+            "f1"])
 
-    return metrics 
+    return metrics

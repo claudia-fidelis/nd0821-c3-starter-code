@@ -1,3 +1,4 @@
+from ml.model import train_model, compute_model_metrics, inference
 import os
 import sys
 import numpy as np
@@ -9,7 +10,6 @@ from sklearn.dummy import DummyClassifier
 file_dir = os.path.dirname(__file__)
 sys.path.insert(0, file_dir)
 
-from ml.model import train_model, compute_model_metrics, inference
 
 @pytest.fixture()
 def data():
