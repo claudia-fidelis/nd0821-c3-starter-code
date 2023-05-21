@@ -1,7 +1,7 @@
 import requests
+import json
 
-url = 'https://cansus.onrender.com/'
-census = [{
+data = [{
     'age':39,
     'workclass':'State-gov',
     'fnlgt':77516,
@@ -18,7 +18,7 @@ census = [{
     'native-country':'United-States'
     }]
 
-response = requests.post(url, json = census)
+r = requests.post("https://render-deployment-nd0821-c3.onrender.com/model/", json = data)
 
-print('status code:', response.status_code)
-print('salary:', response.json())
+print('status code:', r.status_code)
+print('salary:', r.json())
