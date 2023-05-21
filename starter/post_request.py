@@ -1,7 +1,7 @@
 import requests
 import json
 
-data = [{
+data = {
     'age':39,
     'workclass':'State-gov',
     'fnlgt':77516,
@@ -16,9 +16,9 @@ data = [{
     'capital-loss':0,
     'hours-per-week':40,
     'native-country':'United-States'
-    }]
+    }
 
-r = requests.post("https://render-deployment-nd0821-c3.onrender.com/model/", json = data)
+r = requests.post("https://render-deployment-nd0821-c3.onrender.com/model/", json = json.dumps(data))
 
 print('status code:', r.status_code)
 print('salary:', r.json())
