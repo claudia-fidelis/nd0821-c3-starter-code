@@ -6,6 +6,7 @@ import pytest
 from sklearn.base import BaseEstimator, ClassifierMixin
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.dummy import DummyClassifier
+from sklearn.datasets import make_classification
 
 file_dir = os.path.dirname(__file__)
 sys.path.insert(0, file_dir)
