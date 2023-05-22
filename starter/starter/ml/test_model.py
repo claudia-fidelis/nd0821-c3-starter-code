@@ -28,7 +28,7 @@ def test_train_model(data):
 
 
 def test_compute_model_metrics():
-     """Test compute_model_metrics
+    """Test compute_model_metrics
     """
     y, preds = [1, 0, 0, 1, 1, 1], [1, 0, 1, 1, 0, 1]
     precision, recall, fbeta = compute_model_metrics(y, preds)
@@ -37,7 +37,7 @@ def test_compute_model_metrics():
 
 
 def test_inference():
-     """Test inference
+    """Test inference
     """    
     X = np.random.rand(10, 5)
     y = np.random.randint(2, size=10)
