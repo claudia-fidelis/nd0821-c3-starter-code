@@ -12,6 +12,7 @@ from pydantic import BaseModel, Field
 from starter.ml.model import inference
 from starter.ml.data import process_data
 import pandas as pd
+import pickle
 
 cat_features = [
         "workclass",
