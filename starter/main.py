@@ -53,9 +53,9 @@ async def say_hello():
 @app.post("/model/")
 async def api_inference(item: TaggedItem):
 
-    model = pickle.dump(model, open(model/model.pkl, 'wb'))
-    encoder = pickle.dump(encoder, open(model/encoder.pkl, 'wb'))
-    lb = pickle.dump(lb, open(model/lb.pkl, 'wb'))
+    model = pickle.load(open('model/clf.pkl', 'rb'))
+    encoder = pickle.load(open('model/encoder.pkl', 'rb'))
+    lb = pickle.load(open('model/lb.pkl', 'rb'))
 
     X, _, _, _ = process_data(
         pd.DataFrame(item).set_index(0).transpose().rename(
