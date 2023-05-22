@@ -24,18 +24,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Configure AWS Credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-region: us-east-1
-        aws-access-key-id: AKIAXIJH6GK44IAGPUPJ
-        aws-secret-access-key: 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
-        role-duration-seconds: 1200
-        role-session-name: MySessionName
-    - name: Set up DVC
-      uses: iterative/setup-dvc@v1
-    - name: Pull from DVC
-      run: dvc pull
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
