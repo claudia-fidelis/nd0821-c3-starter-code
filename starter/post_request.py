@@ -18,7 +18,7 @@ data = {
     'native-country':'United-States'
     }
 
-r = requests.post("https://render-deployment-nd0821-c3.onrender.com/model/", json = json.dumps(data))
+r = requests.post("https://render-deployment-nd0821-c3.onrender.com/model/", data = json.dumps(data))
 
 print('status code:', r.status_code)
 print('salary:', r.json())
