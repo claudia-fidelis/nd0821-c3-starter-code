@@ -19,7 +19,9 @@ The data was obtained from the Barry Becker from the 1994 Census database (https
 The original data set has 32561 rows and 14 features, and a 80-20 split was used to break this into a train and test set. No stratification was done. To use the data for training a One Hot Encoder was used on the features and a label binarizer was used on the labels.
 
 We used GridSearchCV to perform a hyperparameter optimization and we gwt the following result: 
-`{'learning_rate': 0.2, 'max_depth': 5, 'n_estimators': 50}`
+* learning_rate: 0.2
+* max_depth: 5
+* n_estimators: 50
 
 |Feature|Importance|
 |---|---|
@@ -43,9 +45,10 @@ We used GridSearchCV to perform a hyperparameter optimization and we gwt the fol
 
 ## Metrics
 
-Precision = 0.7896341463414634,
-Recall = 0.6544535691724573,
-FBeta = 0.7157167530224526
+We measure and report three metrics:
+* Precision = 0.7896
+* Recall = 0.6545
+* FBeta = 0.7157
 
 ## Ethical Considerations
 
