@@ -52,10 +52,16 @@ async def say_hello():
 # This allows sending of data (our TaggedItem) via POST to the API.
 @app.post("/model/")
 async def api_inference(item: TaggedItem):
-
-    model = pickle.load(open('model/clf.pkl', 'rb'))
-    encoder = pickle.load(open('model/encoder.pkl', 'rb'))
-    lb = pickle.load(open('model/lb.pkl', 'rb'))
+    
+    model_dir = 'model'
+    model_path = os.path.join(os.path.abspath(os.curdir), model_dir)
+    
+    with open(os.path.join(model_path, "clf.pkl"), 'rb') as file:
+        model = pickle.load(file)
+    with open(os.path.join(model_path, "model_encoder.pkl"), 'rb') as file:
+        encoder = pickle.load(file)
+    with open(os.path.join(model_path, "model_lb.pkl"), 'rb') as file:
+        lb = pickle.load(file)
 
     X, _, _, _ = process_data(
         pd.DataFrame(item).set_index(0).transpose().rename(
