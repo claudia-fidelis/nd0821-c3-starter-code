@@ -1,4 +1,4 @@
-from ml.model import train_model, compute_model_metrics, inference
+from model import train_model, compute_model_metrics, inference
 import os
 import sys
 import numpy as np
