@@ -53,7 +53,7 @@ async def say_hello():
 @app.post("/model/")
 async def api_inference(item: TaggedItem):
     
-    model_dir = 'model'
+    model_dir = 'starter/model'
     model_path = os.path.join(os.path.abspath(os.curdir), model_dir)
     
     with open(os.path.join(model_path, "clf.pkl"), 'rb') as file:
