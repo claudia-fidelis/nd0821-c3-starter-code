@@ -58,9 +58,9 @@ async def api_inference(item: TaggedItem):
     
     with open(os.path.join(model_path, "clf.pkl"), 'rb') as file:
         model = pickle.load(file)
-    with open(os.path.join(model_path, "model_encoder.pkl"), 'rb') as file:
+    with open(os.path.join(model_path, "encoder.pkl"), 'rb') as file:
         encoder = pickle.load(file)
-    with open(os.path.join(model_path, "model_lb.pkl"), 'rb') as file:
+    with open(os.path.join(model_path, "lb.pkl"), 'rb') as file:
         lb = pickle.load(file)
 
     X, _, _, _ = process_data(
